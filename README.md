@@ -1,31 +1,28 @@
 # iiitb_alu-Arithmetic and Logic Unit
-Making a arithmetic and logical unit (ALU) using Verilog Programming
-Here we are going to make a clock driven => synchronous ALU.
+This project simulates a arithmetic and logical unit (ALU) using Verilog Programming.
+Here we are going to make a clock driven 4-bit synchronous ALU.
 
 ## Introduction
-An ALU is the most basic part of any computer processor. This unit, as the name suggest, helps in any arithmetic and logical operations that come across the processor. Also, a N-bit processor has a N-bit ALU.
+An ALU is the most basic part of any computer processor. This unit, as the name suggest, helps in any arithmetic and logical operations that come across the processor. Also, a N-bit processor has a N-bit ALU.Many times the Logical and Arithmetic part is divided into two different parts. This practice helps to keep the logic concise and easy to understand.
 
-Many times the Logical and Arithmetic part is divided into two different parts. This practice helps to keep the logic concise and easy to understand.
 
-In this tutorial, we will build a 4-bit synchronous ALU using our very own Verilog HDL. We will also use the parametric approach so that this design could be scaled up to the requirement of the designer.
-
-2. Data & Instruction Bus
+#### Data & Instruction Bus
 In order to understand the working of the ALU, we need to understand how do we talk to the ALU.
 
 First there is the data bus, through which we provide the data to be processed to the ALU. Thus in the given figure the A and B inputs are the 4-bit inputs, which work as the data supply for the ALU.
 
 And secondly, we have Instructions that are necessary to tell the ALU which operation is to be performed with the operands. Here, we have 16 instructions(8 arithmetic and 8 logical), so a 4-bit instruction bus is used.
-We also have a flag register which holds the different types of flags such as carry flag, zero flag, etc. but to keep things simple we will not introduce it in this tutorial. (There will be a separate tutorial including the flag output in the ALU so stay tuned.)
+We also have a flag register which holds the different types of flags such as carry flag, zero flag, etc. but to keep things simple we will not introduce it in this design.
 
-3. Introduction to clock concept => Synchronous design
+#### Introduction to clock concept => Synchronous design
 Clock in FPGA (Field Programmable Gate Array) design is rather easy concept, since each flipflop is driven by a clock and FPGA is made up of many of such flipflops.
 
 This simply implies that any change in other signals will occur either at rising edge of the clock or falling edge of the clock ( as per what is mentioned in the design ). Thus faster the clock the faster changes can occur and the more faster would be the design. Also, the design become synchronous as the changes occur at either of the edge.
 
-4. Arithmetic unit
+### Arithmetic unit
 The arithmetic unit comprises of the Arithmetic instructions as mentioned below:
 
-### Arithmetic Instructions
+#### Arithmetic Instructions
 
 <img width="272" alt="image" src="https://user-images.githubusercontent.com/110079800/182906709-08027190-c12b-4d5a-a8a6-edfe65a92a27.png">
 
@@ -33,10 +30,10 @@ The arithmetic unit comprises of the Arithmetic instructions as mentioned below:
 
 
 
-5. Logical unit
+### Logical unit
 The Logical unit comprises of the Logical instructions as mentioned below:
 
-### Logical Operations
+#### Logical Operations
 
 <img width="216" alt="image" src="https://user-images.githubusercontent.com/110079800/182906416-fc193f09-5ff7-4cdf-84ae-6e660d91bd83.png">
 
