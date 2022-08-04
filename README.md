@@ -39,7 +39,7 @@ The Logical unit comprises of the Logical instructions as mentioned below:
 
 
 
-Therefore, if we select the MSB to be ‘1’ we can access one of the Logical instructions and if we take it to be ‘0’ we can access Arithmetic instructions.
+Therefore, if we select the MSB to be ‘0’ we can access one of the Logical instructions and if we take it to be ‘1’ we can access Arithmetic instructions.
 
 
 ## Block Diagram
