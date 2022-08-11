@@ -108,6 +108,17 @@ To synthesize
 
 `yosys -s yosys_alu.sh`
 
+## GLS-Gate Level Simulation
+GLS is used to verify the logical correctness of design after synthesis.we run the test bench with netlist as design under test.
+
+## steps to perform GLS
+
+``` $ iverilog -DFUNCTTIONAL -DUNIT_DELAY=#1 primitives.v sky130_fd_sc_hd.v iiitb_alu_synth.v iiitb_alu_tb.v ```
+
+## GLS OUTPUT
+
+![image](https://user-images.githubusercontent.com/110079800/184203345-c7d3a67c-b787-4467-9655-0017ac725273.png)
+
 ## Contributors
 * Nisha B Rajput
 
@@ -130,7 +141,7 @@ To synthesize
 
 * Dantu Nandini Devi,Ms student,International Institute of Information Technology,Bangalore nandini.dantu@gmail.com
 
-* Banda Anusha.M Tech student,International Institute of Information Technology,Bangalore 
+* Banda Anusha.M Tech student,International Institute of Information Technology,Bangalore Banda.Anusha@iiitb.ac.in
 
 
 
