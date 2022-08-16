@@ -108,6 +108,8 @@ To synthesize
 
 `yosys -s yosys_alu.sh`
 
+![image](https://user-images.githubusercontent.com/110079800/184940990-a420823c-df42-40c5-ae54-26404ead3c6c.png)
+
 ## GLS-Gate Level Simulation
 GLS is used to verify the logical correctness of design after synthesis.we run the test bench with netlist as design under test.
 
