@@ -120,6 +120,9 @@ GLS is used to verify the logical correctness of design after synthesis.we run t
 ## GLS OUTPUT
 
 ![image](https://user-images.githubusercontent.com/110079800/184203345-c7d3a67c-b787-4467-9655-0017ac725273.png)
+## PHYSICAL DESIGN
+
+<img width="574" alt="Layout" src="https://user-images.githubusercontent.com/110079800/186626541-c02d894f-2448-440c-8c8d-7627c2d38822.png">
 
 ## Contributors
 * Nisha B Rajput
