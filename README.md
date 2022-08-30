@@ -120,6 +120,198 @@ GLS is used to verify the logical correctness of design after synthesis.we run t
 ## GLS OUTPUT
 
 ![image](https://user-images.githubusercontent.com/110079800/184203345-c7d3a67c-b787-4467-9655-0017ac725273.png)
+
+## LAYOUT
+
+### Preparation
+
+The layout is generated using OpenLane. To run a custom design on openlane, Navigate to the openlane folder and run the following commands:<br>
+```
+$ cd designs
+
+$ mkdir iiitb_alu
+
+$ cd iiitb_alu
+
+$ mkdir src
+
+$ touch config.json
+
+$ cd src
+
+$ touch iiitb_alu.v
+```
+
+The iiitb_freqdiv.v file should contain the verilog RTL code you have used and got the post synthesis simulation for. <br>
+
+Copy  `sky130_fd_sc_hd__fast.lib`, `sky130_fd_sc_hd__slow.lib`, `sky130_fd_sc_hd__typical.lib` and `sky130_vsdinv.lef` files to `src` folder in your design. <br>
+
+The final src folder should look like this: <br>
+
+![image](https://user-images.githubusercontent.com/110079800/187529504-5ecb1c2a-cf15-47a1-a50b-979467d52457.png)
+
+As mentioned by kunal sir dont use defined `DIE_AREA` and `FP_SIZING : absolute`, use `FP_SIZING : relative`
+```
+{
+    "DESIGN_NAME": "iiitb_alu",
+    "VERILOG_FILES": "dir::src/iiitb_freqdiv.v",
+    "CLOCK_PORT": "clk",
+    "CLOCK_NET": "clk",
+    "GLB_RESIZER_TIMING_OPTIMIZATIONS": true,
+    "CLOCK_PERIOD": 10,
+    "PL_TARGET_DENSITY": 0.7,
+    "FP_SIZING" : "relative",
+    "pdk::sky130*": {
+        "FP_CORE_UTIL": 30,
+        "scl::sky130_fd_sc_hd": {
+            "FP_CORE_UTIL": 20
+        }
+    },
+    
+    "LIB_SYNTH": "dir::src/sky130_fd_sc_hd__typical.lib",
+    "LIB_FASTEST": "dir::src/sky130_fd_sc_hd__fast.lib",
+    "LIB_SLOWEST": "dir::src/sky130_fd_sc_hd__slow.lib",
+    "LIB_TYPICAL": "dir::src/sky130_fd_sc_hd__typical.lib",  
+    "TEST_EXTERNAL_GLOB": "dir::../iiitb_alu/src/*"
+
+
+}
+
+```
+Save all the changes made above and Navigate to the openlane folder in terminal and give the following command :<br>
+
+```
+$ sudo make mount
+```
+![image](https://user-images.githubusercontent.com/110079800/187529978-373d7b05-41f2-4e28-9962-10fa7e057d51.png)
+
+After entering the openlane container give the following command:<br>
+```
+$ ./flow.tcl -interactive
+```
+![image](https://user-images.githubusercontent.com/110079800/187530061-8f404cfd-ccc9-49da-b5b6-1cff1fc9613e.png)
+
+This command will take you into the tcl console. In the tcl console type the following commands:<br>
+
+```
+% package require openlane 0.9
+```
+![image](https://user-images.githubusercontent.com/110079800/187530309-9e59ad3c-0705-4009-a2a3-495a0a1c67ad.png)
+
+% prep -design iiitb_alu
+
+![image](https://user-images.githubusercontent.com/110079800/187530419-5e64885e-bf33-46f5-8579-1f33e535bda1.png)
+
+The following commands are to merge external the lef files to the merged.nom.lef. In our case sky130_vsdiat is getting merged to the lef file <br>
+```
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+```
+
+![image](https://user-images.githubusercontent.com/110079800/187530600-37c2e4cf-5353-4e7f-82f8-4f7d724b0aff.png)
+
+## Synthesis
+```
+% run_synthesis
+```
+![image](https://user-images.githubusercontent.com/110079800/187530782-0ca7d3a3-4c3d-49ed-bb73-4ab68088a80a.png)
+
+### Synthesis Reports
+![image](https://user-images.githubusercontent.com/110079800/187531064-0d0bd681-7028-4f55-a08d-e5cce97685d5.png)
+![image](https://user-images.githubusercontent.com/110079800/187531169-b9b405b2-553a-4c72-84d5-397db379df6b.png)
+
+Setup and Hold Slack after synthesis
+
+![image](https://user-images.githubusercontent.com/110079800/187531239-dc63d6ae-329f-486d-abcf-40db19f3a6c5.png)
+
+```
+Flop Ratio = Ratio of total number of flip flops / Total number of cells present in the design = 8/160 = 0.05
+```
+<br>
+The sky130_vsdinv should also reflect in your netlist after synthesis <br>
+<br>
+
+```
+% run_floorplan
+```
+![image](https://user-images.githubusercontent.com/110079800/187531704-e99c334b-2ab7-4286-99b9-6aa110424e8c.png)
+
+### Floorplan Reports
+Die Area <br>
+<br>
+![image](https://user-images.githubusercontent.com/110079800/187531820-4287aa2a-ac43-4602-b2da-2f86651e9461.png)
+
+Core Area <br>
+<br>
+![image](https://user-images.githubusercontent.com/110079800/187531927-bdbb6399-099e-43e8-af60-d5409acf7ef0.png)
+
+Navigate to results->floorplan and type the Magic command in terminal to open the floorplan <br>
+```
+$ magic -T /home/nisha/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.nom.lef def read iiitb_alu.def &
+```
+![image](https://user-images.githubusercontent.com/110079800/187532133-37095523-58c9-4c91-a162-81f00d897e96.png)
+
+Floorplan view <br>
+<br>
+![image](https://user-images.githubusercontent.com/110079800/187532213-900a77ac-78fb-4889-89f9-e09bf886c56e.png)
+
+All the cells are placed in the left corner of the floorplan<br>
+<br>
+
+## Placement
+```
+% run_placement
+```
+![image](https://user-images.githubusercontent.com/110079800/187532540-8f620134-86a4-49b4-90bf-978cf9e0440c.png)
+
+### Placement Reports
+Navigate to results->placement and type the Magic command in terminal to open the placement view <br>
+```
+$ magic -T /home/nisha/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.max.lef def read iiitb_alu.def &
+```
+### Placement View <br>
+<br>
+![image](https://user-images.githubusercontent.com/110079800/187532770-c42d920b-5f27-48da-a1e9-026046c03f05.png)
+
+![image](https://user-images.githubusercontent.com/110079800/187533029-9921ef65-450b-4459-aa46-a1bf9fe9d25c.png)
+
+The sky130_vsdinv should also reflect in your netlist after placement 
+
+![image](https://user-images.githubusercontent.com/110079800/187537115-108ea84c-597d-4a61-a4b7-d206ac7409d0.png)
+
+
+## Clock Tree Synthesis
+```
+% run_cts
+```
+![image](https://user-images.githubusercontent.com/110079800/187533457-8dada156-2828-48d4-b09d-bbf9c4e00c5e.png)
+## Routing
+```
+% run_routing
+```
+![image](https://user-images.githubusercontent.com/110079800/187533561-2eb0cb7f-8fc8-4fea-8d33-d07207760dda.png)
+### Routing Reports
+Navigate to results->routing and type the Magic command in terminal to open the routing view <br>
+```
+$ magic -T /home/nisha/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.nom.lef def read iiitb_alu.def &
+```
+![image](https://user-images.githubusercontent.com/110079800/187533828-6a981cc5-a7e5-41bd-a087-9cbc46853ce4.png)
+
+
+sky130_vsdinv</b> in the routing view :
+
+
+![image](https://user-images.githubusercontent.com/110079800/187536058-c6fe8cc9-526b-4c77-b38f-228d3f7e13ac.png)
+
+
+
+Area report by magic :<br>
+<br>
+![image](https://user-images.githubusercontent.com/110079800/187534035-215a243a-a7c8-4d55-9d38-6dd9f84c8077.png)
+The sky130_vsdinv should also reflect in your netlist after routing <br>
+<br>
+![image](https://user-images.githubusercontent.com/110079800/187534152-5a87061a-235a-4117-9ff9-fb3a9f1f6688.png)
+
 ## PHYSICAL DESIGN
 
 <img width="574" alt="Layout" src="https://user-images.githubusercontent.com/110079800/186626541-c02d894f-2448-440c-8c8d-7627c2d38822.png">
