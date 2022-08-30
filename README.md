@@ -241,7 +241,7 @@ $ cd src
 $ touch iiitb_alu.v
 ```
 
-The iiitb_freqdiv.v file should contain the verilog RTL code you have used and got the post synthesis simulation for. <br>
+The iiitb_alu.v file should contain the verilog RTL code you have used and got the post synthesis simulation for. <br>
 
 Copy  `sky130_fd_sc_hd__fast.lib`, `sky130_fd_sc_hd__slow.lib`, `sky130_fd_sc_hd__typical.lib` and `sky130_vsdinv.lef` files to `src` folder in your design. <br>
 
@@ -253,7 +253,7 @@ As mentioned by kunal sir dont use defined `DIE_AREA` and `FP_SIZING : absolute`
 ```
 {
     "DESIGN_NAME": "iiitb_alu",
-    "VERILOG_FILES": "dir::src/iiitb_freqdiv.v",
+    "VERILOG_FILES": "dir::src/iiitb_alu.v",
     "CLOCK_PORT": "clk",
     "CLOCK_NET": "clk",
     "GLB_RESIZER_TIMING_OPTIMIZATIONS": true,
@@ -266,16 +266,15 @@ As mentioned by kunal sir dont use defined `DIE_AREA` and `FP_SIZING : absolute`
             "FP_CORE_UTIL": 20
         }
     },
-    
-    "LIB_SYNTH": "dir::src/sky130_fd_sc_hd__typical.lib",
-    "LIB_FASTEST": "dir::src/sky130_fd_sc_hd__fast.lib",
-    "LIB_SLOWEST": "dir::src/sky130_fd_sc_hd__slow.lib",
-    "LIB_TYPICAL": "dir::src/sky130_fd_sc_hd__typical.lib",  
-    "TEST_EXTERNAL_GLOB": "dir::../iiitb_alu/src/*"
 
+"LIB_SYNTH": "dir::src/sky130_fd_sc_hd__typical.lib",
+"LIB_FASTEST": "dir::src/sky130_fd_sc_hd__fast.lib",
+"LIB_SLOWEST": "dir::src/sky130_fd_sc_hd__slow.lib",
+"LIB_TYPICAL": "dir::src/sky130_fd_sc_hd__typical.lib",
+"TEST_EXTERNAL_GLOB": "dir::../iiitb_alu/src/*",
+"SYNTH_DRIVING_CELL":"sky130_vsdinv"
 
 }
-
 ```
 Save all the changes made above and Navigate to the openlane folder in terminal and give the following command :<br>
 
