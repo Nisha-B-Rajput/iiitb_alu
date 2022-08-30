@@ -1,5 +1,5 @@
 # iiitb_alu-Arithmetic and Logic Unit
-This project simulates a arithmetic and logical unit (ALU) using Verilog Programming.
+This project simulates an arithmetic and logical unit (ALU) using Verilog Programming.
 Here we are going to make a clock driven 4-bit synchronous ALU.
 
 ## Introduction
@@ -120,6 +120,105 @@ GLS is used to verify the logical correctness of design after synthesis.we run t
 ## GLS OUTPUT
 
 ![image](https://user-images.githubusercontent.com/110079800/184203345-c7d3a67c-b787-4467-9655-0017ac725273.png)
+
+## Python Installation
+```
+$ sudo apt install -y build-essential python3 python3-venv python3-pip
+```
+
+## Docker Installation
+```
+$ sudo apt-get remove docker docker-engine docker.io containerd runc (removes older version of docker if installed)
+
+$ sudo apt-get update
+
+$ sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+    
+$ sudo mkdir -p /etc/apt/keyrings
+
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+$ echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  
+$ sudo apt-get update
+
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+$ apt-cache madison docker-ce (copy the version string you want to install)
+
+$ sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io docker-compose-plugin (paste the version string copies in place of <VERSION_STRING>)
+
+$ sudo docker run hello-world (If the docker is successfully installed u will get a success message here)
+```
+
+## OpenLane Installation
+```
+$ git clone https://github.com/The-OpenROAD-Project/OpenLane.git
+
+$ cd OpenLane/
+
+$ make
+
+$ make test
+```
+
+## Magic Installation
+
+For Magic to be installed and work properly the following softwares have to be installed first:
+
+### Installing csh
+```
+$ sudo apt-get install csh
+```
+
+### Installing x11/xorg
+```
+$ sudo apt-get install x11
+
+$ sudo apt-get install xorg
+
+$ sudo apt-get install xorg openbox
+```
+
+### Installing GCC
+```
+$ sudo apt-get install gcc
+```
+
+### Installing build-essential
+```
+$ sudo apt-get install build-essential
+```
+
+### Installing OpenGL
+```
+$ sudo apt-get install freeglut3-dev
+```
+
+### Installing tcl/tk
+```
+$ sudo apt-get install tcl-dev tk-dev
+```
+### Installing magic
+After all the softwares are installed, run the following commands for installing magic:
+
+```
+$ git clone https://github.com/RTimothyEdwards/magic
+
+$ cd magic
+
+$ ./configure
+
+$ make
+
+$ make install
+```
 
 ## LAYOUT
 
@@ -275,6 +374,10 @@ $ magic -T /home/nisha/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read .
 
 ![image](https://user-images.githubusercontent.com/110079800/187533029-9921ef65-450b-4459-aa46-a1bf9fe9d25c.png)
 
+**sky130_vsdinv** in the placement view:
+
+![image](https://user-images.githubusercontent.com/110079800/187541695-63930340-c34d-434f-9360-2e76d360bd17.png)
+
 The sky130_vsdinv should also reflect in your netlist after placement 
 
 ![image](https://user-images.githubusercontent.com/110079800/187537115-108ea84c-597d-4a61-a4b7-d206ac7409d0.png)
@@ -298,7 +401,7 @@ $ magic -T /home/nisha/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read .
 ![image](https://user-images.githubusercontent.com/110079800/187533828-6a981cc5-a7e5-41bd-a087-9cbc46853ce4.png)
 
 
-sky130_vsdinv</b> in the routing view :
+**sky130_vsdinv** in the routing view :
 
 
 ![image](https://user-images.githubusercontent.com/110079800/187536058-c6fe8cc9-526b-4c77-b38f-228d3f7e13ac.png)
