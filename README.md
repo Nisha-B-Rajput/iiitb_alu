@@ -367,9 +367,7 @@ Navigate to results->placement and type the Magic command in terminal to open th
 ```
 $ magic -T /home/nisha/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read ../../tmp/merged.max.lef def read iiitb_alu.def &
 ```
-### Placement View <br>
-<br>
-![image](https://user-images.githubusercontent.com/110079800/187532770-c42d920b-5f27-48da-a1e9-026046c03f05.png)
+### Placement View
 
 ![image](https://user-images.githubusercontent.com/110079800/187533029-9921ef65-450b-4459-aa46-a1bf9fe9d25c.png)
 
