@@ -426,6 +426,15 @@ The sky130_vsdinv should also reflect in your netlist after routing <br>
 <br>
 ![image](https://user-images.githubusercontent.com/110079800/187534152-5a87061a-235a-4117-9ff9-fb3a9f1f6688.png)
 
+## Report Checks
+
+<img width="808" alt="image" src="https://user-images.githubusercontent.com/110079800/192543980-294b0463-3836-463b-8f67-c813d304a39c.png">
+
+```
+Clock Frequency = 1/[(10-5.19)*10^(-9)] = 207.9 MHz
+
+```
+
 ## Physical Design
 
 <img width="574" alt="Layout" src="https://user-images.githubusercontent.com/110079800/186626541-c02d894f-2448-440c-8c8d-7627c2d38822.png">
