@@ -327,7 +327,7 @@ Setup and Hold Slack after synthesis
 ![image](https://user-images.githubusercontent.com/110079800/192505891-52753c81-d86f-4335-aa82-18a012e4ca95.png)
 
 ```
-Flop Ratio = Ratio of total number of flip flops / Total number of cells present in the design = 8/160 = 0.05
+Flop Ratio = Ratio of total number of flip flops / Total number of cells present in the design = 8/164 = 0.0488
 ```
 <br>
 The sky130_vsdinv should also reflect in your netlist after synthesis <br>
