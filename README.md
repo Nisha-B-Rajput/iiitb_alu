@@ -324,7 +324,7 @@ add_lefs -src $lefs
 
 Setup and Hold Slack after synthesis
 
-![image](https://user-images.githubusercontent.com/110079800/187531239-dc63d6ae-329f-486d-abcf-40db19f3a6c5.png)
+![image](https://user-images.githubusercontent.com/110079800/192505891-52753c81-d86f-4335-aa82-18a012e4ca95.png)
 
 ```
 Flop Ratio = Ratio of total number of flip flops / Total number of cells present in the design = 8/160 = 0.05
