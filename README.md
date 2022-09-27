@@ -326,7 +326,7 @@ Setup and Hold Slack after synthesis
 
 ![image](https://user-images.githubusercontent.com/110079800/192505891-52753c81-d86f-4335-aa82-18a012e4ca95.png)
 
-POWER REPORT
+ ## POWER REPORT
 
 ![image](https://user-images.githubusercontent.com/110079800/192513023-1fccba91-ba0c-4c48-a094-e2c0885fa1a5.png)
 
@@ -415,9 +415,10 @@ $ magic -T /home/nisha/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read .
 
 
 
-Area report by magic :<br>
+## Area report by magic :<br>
 <br>
-![image](https://user-images.githubusercontent.com/110079800/187534035-215a243a-a7c8-4d55-9d38-6dd9f84c8077.png)
+<img width="926" alt="image" src="https://user-images.githubusercontent.com/110079800/192514642-1bd8034b-2705-4beb-8c88-314ec7be1e67.png">
+
 The sky130_vsdinv should also reflect in your netlist after routing <br>
 <br>
 ![image](https://user-images.githubusercontent.com/110079800/187534152-5a87061a-235a-4117-9ff9-fb3a9f1f6688.png)
