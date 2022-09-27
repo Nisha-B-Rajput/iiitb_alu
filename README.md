@@ -315,8 +315,7 @@ add_lefs -src $lefs
 ![image](https://user-images.githubusercontent.com/110079800/187530782-0ca7d3a3-4c3d-49ed-bb73-4ab68088a80a.png)
 
 ### Synthesis Reports
-![image](https://user-images.githubusercontent.com/110079800/187531064-0d0bd681-7028-4f55-a08d-e5cce97685d5.png)
-![image](https://user-images.githubusercontent.com/110079800/187531169-b9b405b2-553a-4c72-84d5-397db379df6b.png)
+<img width="923" alt="image" src="https://user-images.githubusercontent.com/110079800/192500163-93ae6275-f924-44b5-b5af-0a76f79d759c.png">
 
 Setup and Hold Slack after synthesis
 
