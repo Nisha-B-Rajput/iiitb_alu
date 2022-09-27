@@ -326,6 +326,12 @@ Setup and Hold Slack after synthesis
 
 ![image](https://user-images.githubusercontent.com/110079800/192505891-52753c81-d86f-4335-aa82-18a012e4ca95.png)
 
+POWER REPORT
+
+![image](https://user-images.githubusercontent.com/110079800/192513023-1fccba91-ba0c-4c48-a094-e2c0885fa1a5.png)
+
+
+
 ```
 Flop Ratio = Ratio of total number of flip flops / Total number of cells present in the design = 8/164 = 0.0488
 ```
