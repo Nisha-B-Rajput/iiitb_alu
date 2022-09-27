@@ -281,24 +281,26 @@ Save all the changes made above and Navigate to the openlane folder in terminal 
 ```
 $ sudo make mount
 ```
-![image](https://user-images.githubusercontent.com/110079800/187529978-373d7b05-41f2-4e28-9962-10fa7e057d51.png)
+<img width="920" alt="image" src="https://user-images.githubusercontent.com/110079800/192500749-980a67b0-401c-422d-8c80-2afcd4a5bebe.png">
+
 
 After entering the openlane container give the following command:<br>
 ```
 $ ./flow.tcl -interactive
 ```
-![image](https://user-images.githubusercontent.com/110079800/187530061-8f404cfd-ccc9-49da-b5b6-1cff1fc9613e.png)
+<img width="926" alt="image" src="https://user-images.githubusercontent.com/110079800/192501132-743bfbc3-4372-4782-938c-933fd64e4fa2.png">
+
 
 This command will take you into the tcl console. In the tcl console type the following commands:<br>
 
 ```
 % package require openlane 0.9
 ```
-![image](https://user-images.githubusercontent.com/110079800/187530309-9e59ad3c-0705-4009-a2a3-495a0a1c67ad.png)
+<img width="914" alt="image" src="https://user-images.githubusercontent.com/110079800/192501351-85ec6a46-8bea-43a2-b522-359ab5ec12c6.png">
 
 % prep -design iiitb_alu
 
-![image](https://user-images.githubusercontent.com/110079800/187530419-5e64885e-bf33-46f5-8579-1f33e535bda1.png)
+<img width="916" alt="image" src="https://user-images.githubusercontent.com/110079800/192502346-8854cc1f-85f6-4fe5-b237-30b283db8b46.png">
 
 The following commands are to merge external the lef files to the merged.nom.lef. In our case sky130_vsdiat is getting merged to the lef file <br>
 ```
@@ -306,16 +308,19 @@ set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
 add_lefs -src $lefs
 ```
 
-![image](https://user-images.githubusercontent.com/110079800/187530600-37c2e4cf-5353-4e7f-82f8-4f7d724b0aff.png)
+<img width="916" alt="image" src="https://user-images.githubusercontent.com/110079800/192502507-e3faaf79-c296-47a7-a6b7-18d1696d7363.png">
 
 ## Synthesis
 ```
 % run_synthesis
 ```
-![image](https://user-images.githubusercontent.com/110079800/187530782-0ca7d3a3-4c3d-49ed-bb73-4ab68088a80a.png)
+<img width="916" alt="image" src="https://user-images.githubusercontent.com/110079800/192502833-96d92c98-8cb8-4106-96d0-99d3f1cbfc68.png">
 
 ### Synthesis Reports
-<img width="923" alt="image" src="https://user-images.githubusercontent.com/110079800/192500163-93ae6275-f924-44b5-b5af-0a76f79d759c.png">
+
+![image](https://user-images.githubusercontent.com/110079800/192502969-b605ba8e-201e-4198-b0b1-934f9c5b54ca.png)
+
+
 
 Setup and Hold Slack after synthesis
 
