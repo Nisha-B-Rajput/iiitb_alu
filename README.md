@@ -326,11 +326,11 @@ Setup and Hold Slack after synthesis
 
 ![image](https://user-images.githubusercontent.com/110079800/192505891-52753c81-d86f-4335-aa82-18a012e4ca95.png)
 
- ## POWER REPORT
+ ## Power Report
 
 ![image](https://user-images.githubusercontent.com/110079800/192513023-1fccba91-ba0c-4c48-a094-e2c0885fa1a5.png)
 
-## FLIPFLOPS PRESENT IN DESIGN
+## Flipflops Present in Design
 
 <img width="689" alt="image" src="https://user-images.githubusercontent.com/110079800/192515913-6d9960a2-0cb9-45aa-af04-74659aabca9a.png">
 
@@ -426,7 +426,7 @@ The sky130_vsdinv should also reflect in your netlist after routing <br>
 <br>
 ![image](https://user-images.githubusercontent.com/110079800/187534152-5a87061a-235a-4117-9ff9-fb3a9f1f6688.png)
 
-## PHYSICAL DESIGN
+## Physical Design
 
 <img width="574" alt="Layout" src="https://user-images.githubusercontent.com/110079800/186626541-c02d894f-2448-440c-8c8d-7627c2d38822.png">
 
