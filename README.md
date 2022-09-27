@@ -437,6 +437,8 @@ The sky130_vsdinv should also reflect in your netlist after routing <br>
 
 * Dantu Nandini Devi
 
+* Mahati Basavaraju
+
 * Banda Anusha
 
 
@@ -451,6 +453,8 @@ The sky130_vsdinv should also reflect in your netlist after routing <br>
 * Kunal Ghosh,Director,VSD Corp.Pvt. Ltd. kunalghosh@gmail.com
 
 * Dantu Nandini Devi,Ms student,International Institute of Information Technology,Bangalore nandini.dantu@gmail.com
+
+* Mahati Basavaraju,Ms student,International Institute of Information Technology,Bangalore mahati.basavaraju@iiitb.ac.in
 
 * Banda Anusha.M Tech student,International Institute of Information Technology,Bangalore Banda.Anusha@iiitb.ac.in
 
