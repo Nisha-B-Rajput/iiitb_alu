@@ -347,11 +347,11 @@ The sky130_vsdinv should also reflect in your netlist after synthesis <br>
 ### Floorplan Reports
 Die Area <br>
 <br>
-![image](https://user-images.githubusercontent.com/110079800/187531820-4287aa2a-ac43-4602-b2da-2f86651e9461.png)
+<img width="690" alt="image" src="https://user-images.githubusercontent.com/110079800/192513916-ad6a98dc-e25e-44d2-be39-1ca166a4806b.png">
 
 Core Area <br>
 <br>
-![image](https://user-images.githubusercontent.com/110079800/187531927-bdbb6399-099e-43e8-af60-d5409acf7ef0.png)
+<img width="691" alt="image" src="https://user-images.githubusercontent.com/110079800/192513742-fb69ed3e-a3fe-4ad5-ab0d-d54fc372108e.png">
 
 Navigate to results->floorplan and type the Magic command in terminal to open the floorplan <br>
 ```
