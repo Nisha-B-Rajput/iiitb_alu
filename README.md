@@ -330,6 +330,9 @@ Setup and Hold Slack after synthesis
 
 ![image](https://user-images.githubusercontent.com/110079800/192513023-1fccba91-ba0c-4c48-a094-e2c0885fa1a5.png)
 
+## FLIPFLOPS PRESENT IN DESIGN
+
+<img width="689" alt="image" src="https://user-images.githubusercontent.com/110079800/192515913-6d9960a2-0cb9-45aa-af04-74659aabca9a.png">
 
 
 ```
