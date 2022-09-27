@@ -318,7 +318,7 @@ add_lefs -src $lefs
 
 ### Synthesis Reports
 
-<img width="689" alt="Flipflops present in design" src="https://user-images.githubusercontent.com/110079800/192522443-32387840-89e4-4240-aca7-6eb97cc15659.png">
+<img width="691" alt="Post Synthesis Gate Count" src="https://user-images.githubusercontent.com/110079800/192523441-4a750253-d157-4b69-87bb-b48049cf6897.png">
 
 
 
