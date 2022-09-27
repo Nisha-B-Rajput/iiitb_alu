@@ -318,7 +318,7 @@ add_lefs -src $lefs
 
 ### Synthesis Reports
 
-![image](https://user-images.githubusercontent.com/110079800/192502969-b605ba8e-201e-4198-b0b1-934f9c5b54ca.png)
+<img width="689" alt="Flipflops present in design" src="https://user-images.githubusercontent.com/110079800/192522443-32387840-89e4-4240-aca7-6eb97cc15659.png">
 
 
 
