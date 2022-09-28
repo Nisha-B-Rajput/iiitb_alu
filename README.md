@@ -425,11 +425,12 @@ $ magic -T /home/nisha/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read .
 
 <img width="710" alt="image" src="https://user-images.githubusercontent.com/110079800/192665647-8f595f63-ffe0-4ed8-80bc-1581515b3b17.png">
 
+Area = 10493.926um2
+
 The sky130_vsdinv should also reflect in your netlist after routing <br>
 <br>
 ![image](https://user-images.githubusercontent.com/110079800/187534152-5a87061a-235a-4117-9ff9-fb3a9f1f6688.png)
 
-Area = 10493.926um2
 
 ## 3. Performance
 
