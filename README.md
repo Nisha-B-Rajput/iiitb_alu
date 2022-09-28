@@ -420,13 +420,37 @@ $ magic -T /home/nisha/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech read .
 
 ## Area report by magic :<br>
 <br>
-<img width="926" alt="image" src="https://user-images.githubusercontent.com/110079800/192514642-1bd8034b-2705-4beb-8c88-314ec7be1e67.png">
+
+<img width="710" alt="image" src="https://user-images.githubusercontent.com/110079800/192665647-8f595f63-ffe0-4ed8-80bc-1581515b3b17.png">
 
 The sky130_vsdinv should also reflect in your netlist after routing <br>
 <br>
 ![image](https://user-images.githubusercontent.com/110079800/187534152-5a87061a-235a-4117-9ff9-fb3a9f1f6688.png)
 
-## Report Checks
+## 3. Performance
+
+```
+$ sta <br>
+
+OpenSTA> read_liberty -max /home/nisha/OpenLane/designs/iiitb_freqdiv/src/sky130_fd_sc_hd__fast.lib <br>
+
+OpenSTA> read_liberty -min /home/nisha/OpenLane/designs/iiitb_freqdiv/src/sky130_fd_sc_hd__slow.lib <br>
+
+OpenSTA> read_verilog /home/nisha/OpenLane/designs/iiitb_alu_4bit/runs/RUN_2022.09.27_13.11.08/results/routing/iiitb_alu.resized.v <br>
+
+OpenSTA> link_design iiitb_alu <br>
+
+OpenSTA> read_sdc /home/nisha/OpenLane/designs/iiitb_alu_4bit/runs/RUN_2022.09.27_13.11.08/results/cts/iiitb_alu.sdc <br>
+
+OpenSTA> read_spef /home/nisha/OpenLane/designs/iiitb_alu_4bit/runs/RUN_2022.09.27_13.11.08/results/routing/iiitb_alu.nom.spef <br>
+
+OpenSTA> set_propagated_clock [all_clocks] <br>
+
+OpenSTA> report_checks <br>
+
+OpenSTA> report_clock_properties <br>
+
+```
 
 <img width="808" alt="image" src="https://user-images.githubusercontent.com/110079800/192543980-294b0463-3836-463b-8f67-c813d304a39c.png">
 
