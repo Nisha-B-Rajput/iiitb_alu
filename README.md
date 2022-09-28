@@ -320,6 +320,8 @@ add_lefs -src $lefs
 
 <img width="691" alt="Post Synthesis Gate Count" src="https://user-images.githubusercontent.com/110079800/192523441-4a750253-d157-4b69-87bb-b48049cf6897.png">
 
+Gate Count = 164
+
 
 
 Setup and Hold Slack after synthesis
@@ -427,10 +429,12 @@ The sky130_vsdinv should also reflect in your netlist after routing <br>
 <br>
 ![image](https://user-images.githubusercontent.com/110079800/187534152-5a87061a-235a-4117-9ff9-fb3a9f1f6688.png)
 
+Area = 10493.926um2
+
 ## 3. Performance
 
 ```
-$ sta <br>
+$ sta <br> ./flow.tcl -design iiitb_alu_4bit
 
 OpenSTA> read_liberty -max /home/nisha/OpenLane/designs/iiitb_freqdiv/src/sky130_fd_sc_hd__fast.lib <br>
 
@@ -455,7 +459,7 @@ OpenSTA> report_clock_properties <br>
 <img width="808" alt="image" src="https://user-images.githubusercontent.com/110079800/192543980-294b0463-3836-463b-8f67-c813d304a39c.png">
 
 ```
-Clock Frequency = 1/[(10-5.19)*10^(-9)] = 207.9 MHz
+Performance = 1/(clock period - slack) = 1/[(10-5.19)*10^(-9)] = 207.9 MHz
 
 ```
 
